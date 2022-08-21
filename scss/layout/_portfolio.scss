@@ -1,0 +1,222 @@
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 8px;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 768px) {
+    justify-content: center;
+    margin-bottom: 50px;
+    }
+}
+
+.portfolio__tabs-selected {
+    align-items: center;
+    max-width: 120px;
+    min-width: 73px;
+    min-height: 38px;
+    padding: 6px 22px;
+
+    font-family: var(--primary-font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.62;
+
+    text-align: center;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    color: var(--secondary-color);
+    background: var(--accent-color);
+    border-radius: 4px;
+    border: none;
+}
+
+.portfolio__tabs {
+    align-items: center;
+    text-align: center;
+    max-width: 160px;
+    min-width: 101px;
+    min-height: 38px;
+    padding: 6px 22px;
+
+    margin-bottom: 15px;
+    &:last-child {
+    margin-bottom: 0;
+    }
+
+    font-family: var(--primary-font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.62;
+
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    color: var(--primary-color);
+    background: #F5F4FA;
+    border-radius: 4px;
+    border: none;
+
+    transition: background-color var(--animation), color var(--animation), box-shadow var(--animation);
+
+    &:hover,
+    &:focus {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+    }
+
+    @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+    }
+}
+
+.portfolio {
+    @include section;
+
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @media screen and (min-width: 768px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    }
+
+    @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+    }
+}
+
+.card__item {
+    --items: 1;
+
+    @media screen and (min-width: 768px) {
+    --items: 2;
+    display: flex;
+    flex-wrap: wrap;
+    }
+    
+    @media screen and (min-width: 1200px) {
+    --items: 4;
+    display: flex;
+    }
+}
+
+
+.portfolio__container {
+    @include container;
+
+    @media screen and (max-width: 479px) {
+    width: 100%;
+    }
+
+}
+
+.portfolio__card-item {
+    cursor: pointer;
+}
+
+.portfolio__overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+
+    width: 100%;
+    height: 294px;
+    padding: 0 24px 0 24px;
+
+    background-color: rgba(33, 150, 243, 0.9);
+
+    transition: var(--animation);
+
+    &-block {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    
+    position: relative;
+
+    @media screen and (min-width: 480px) {
+    width: 450px;
+    height: 294px;
+    }
+
+    @media screen and (min-width: 768px) {
+    width: 354px;
+    }
+    
+    @media screen and (min-width: 1200px) {
+    width: 370px;
+    }
+    }
+
+    &-text {
+    text-align: left;
+    
+    font-family: var(--primary-font-family);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+    user-select: none;
+    
+    color: var(--secondary-color);
+    }
+}
+
+.portfolio__card-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    transition: box-shadow var(--animation);
+
+    &:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+    
+    &:hover .portfolio__overlay {
+    transform: translateY(0);
+    }
+}
+
+.portfolio__card-wrapper {
+    flex-grow: 1;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    border: 1px solid #EEEEEE;
+    border-top: none;
+}
+
+.portfolio__card-title {
+    margin-bottom: 4px;
+    font-family: var(--primary-font-family);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: var(--primary-color);
+}
+
+.portfolio__card-description {
+    font-family: var(--primary-font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.03em;
+    color: #757575;
+}
